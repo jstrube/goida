@@ -8,9 +8,9 @@ type H1D struct {
 }
 
 
-func (h *H1D) Append(x float) {
-    h.binEntries.push(x)
-}
+// func (h *H1D) Append(x float) {
+//     h.binEntries.push(x)
+// }
 
 
 func MakeH1D(bins []float) *H1D {
