@@ -7,6 +7,7 @@ GOFILES=\
     ITuple.go \
     Item.go \
     Cloud2D.go \
+    Cloud1D.go \
     H1D.go \
     File.go
 

@@ -4,6 +4,7 @@ import (
     "strings"
     "fmt"
     "testing"
+    "reflect"
 )
 
 var test_aida_string = `
@@ -42,3 +43,14 @@ func TestCloud2D(t *testing.T) {
     fmt.Println(c)
 }
 
+func TestConversion(t *testing.T) {
+    var cs *cloud2dStr
+    if err := xml.Unmarshal(strings.NewReader(test_aida_string), &cs); err != nil {
+        t.Errorf("xml.Unmarshal: %q", err)
+    }    
+    c := cs.Convert()
+    fmt.Println(reflect.Typeof(cs))
+    fmt.Println(reflect.Typeof(c))
+    fmt.Println(reflect.Typeof(cs).Name())
+    fmt.Println(reflect.Typeof(c).Name())
+}
